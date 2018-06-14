@@ -13,6 +13,8 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private MainPresenter mainPresenter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +30,14 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        mainPresenter = new MainPresenter(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mainPresenter.onResume();
     }
 
     @Override
@@ -86,4 +96,9 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    MainPresenter getMainPresenter() {
+        return mainPresenter;
+    }
+
 }

@@ -5,4 +5,12 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <string name="notifications">Notifications</string>
+    <string name="bluetooth">Bluetooth</string>
+    <string name="others">Others</string>
+
+
+    <string name="add_notification">Add notification</string>
+    <string name="remove_notification">remove notification</string>
 </resources>
